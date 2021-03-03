@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>刻意練習</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <style>
+        body{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        header{
+            background-color: #01C2CB;
+            padding: 0 130px;
+            color: white;
+        }
+
+        nav{
+            width: 100%;
+            height: 70px;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+
+        p{
+            margin: 0;
+        }
+
+        .nav_container{
+            display: inline-block;
+            width: 30%;
+            height: inherit;
+            margin-right: 50%;
+        }
+
+        .nav_container ul{
+            list-style-type: none;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            margin-top: 22px;
+            margin-left: 22px;
+            font-size: 0px;
+        }
+
+        .nav_container ul li{
+            display: inline;
+            font-size: 20px;
+            padding-right: 10px;
+        }
+
+        .nav_container ul li a{
+            text-decoration: none;
+            color: white;
+            text-shadow: 1.5px 1.5px rgba(211, 211, 211, 0);
+        }
+
+        .nav_container ul li a:hover{
+            animation-name: test;
+            animation-duration: 0.25s;
+            animation-fill-mode: forwards;
+        }
+
+        .search_container{
+            display: inline-block;
+            vertical-align: top;
+            text-align: right;
+            width: 15%;
+            height: 70px;
+            font-size: 0px;
+            position: relative;
+        }
+
+        .search_container input[type="text"]{
+            width: calc(100% - 12px);
+            border: 2px solid white;
+            border-radius: 8px;
+            height: 20px;
+            margin-top: 18px;
+            padding: 6px;
+            padding-left: 34px;
+            font-size: 18px;
+        }
+
+        .icon{
+            content: url(images/icon_search.png);
+            position: absolute;
+            top: 26px;
+            left: 10px;
+        }
+
+        .search_container input[type="text"]:focus{
+            outline: none;
+        }
+
+        .float_L{
+            float: left;
+        }
+
+        .float_R{
+            float: right;
+        }
+
+        .floatClear{
+            clear: both;
+        }
+
+        .title_container{
+            margin-top: 12%;
+            padding: 0 100px 6% 500px;
+        }
+
+        .title_container p{
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 72px;
+            padding-bottom: 20px;
+        }
+
+        .tags{
+            list-style-type: none;
+        }
+
+        .tags li{
+            display: inline-block;
+            letter-spacing: 5px;
+            text-indent: -5px;
+            direction: rtl;
+            border: 2px solid gray;
+            border-radius: 25px;
+            padding: 3px 15px;
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        .tag_beginner{
+            background-color: #F0AC5C;
+            border-color: #F0AC5C !important;
+        }
+
+        .tag_thinking{
+            background-color: #F05C5E;
+            border-color: #F05C5E !important;
+        }
+
+        article{
+            width: 90%;
+            margin: 0 5%;
+        }
+
+        article img{
+            width: 35%;
+            padding-left: 10px;
+        }
+
+        .summary{
+            text-align: center;
+            margin-top: 7.5%;
+            margin-bottom: 7.5%;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        section{
+            margin-top: 48px;
+            font-size: 24px;
+            line-height: 48px;
+        }
+
+        section h1{
+            font-size: 36px;
+            line-height: 72px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        section h2{
+            font-size: 28px;
+            line-height: 56px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .sectionWithImg::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        article hr{
+            border: none;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+            margin-top: 50px;
+        }
+
+        .socialMediaLink{
+            width: 100%;
+            text-align: center;
+            color: lightgray;
+            font-size: 20px;
+            line-height: 40px;
+            margin: 50px 0;
+        }
+
+        .socialMediaLink p{
+            margin-bottom: 5px;
+        }
+
+        .socialMediaLink a{
+            font-family: 'Aldrich', sans-serif;
+            text-decoration: none;
+            color: lightgray;
+            display: block;
+            width: 250px;
+            text-align: center;
+            margin:0 auto;
+        }
+
+        .socialMediaLink a:hover{
+            animation-name: textcolor_IG;
+            animation-duration: 0.25s;
+            animation-fill-mode: forwards;
+            background: -webkit-linear-gradient(30deg,#ffdc7d,#c32aa3);
+            -webkit-background-clip: text;
+        }
+
+        .socialMediaLink a img{
+            max-width: 30px;
+            vertical-align: top;
+            padding: 5px 5px 0 0;
+            margin: 0;
+        }
+
+        footer{
+            background-color: #333333;
+            color: white;
+            padding: 0 200px;
+            height: auto;
+        }
+
+        footer div{
+            display: inline-block;
+        }
+
+        .logo_name{
+            height: 160px;
+            margin-right: 200px;
+        }
+
+        .logo_name p{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 50px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 150%;
+        }
+
+        .subscribe{
+            height: 120px;
+            width: 580px;
+            vertical-align: top;
+            padding-top: 40px;
+        }
+
+        .subscribe p{
+            width: inherit;
+            padding-left: 6px;
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .subscribe input[type="text"]{
+            width: calc(80% - 26px);
+            border: 2px solid white;
+            border-radius: 8px;
+            height: 20px;
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 6px;
+            font-size: 18px;
+        }
+
+        .subscribe input[type="text"]:focus{
+            outline: none;
+        }
+
+        .subscribe input[type="button"]{
+            width: 70px;
+            background-color: #01C2CB;
+            border: 2px solid #01C2CB;
+            border-radius: 8px;
+            height: 36px;
+            padding: 6px 12px;
+            font-size: 16px;
+            color: white;
+            letter-spacing: 5px;
+            text-indent: -5px;
+            direction: rtl;
+        }
+
+        .subscribe input[type="button"]:hover{
+            cursor: pointer;
+        }
+
+
+        /* animation */
+        @keyframes test{
+            from{
+                text-shadow: 1.5x 1.5px rgba(82, 82, 82, 0);
+            }
+            to{
+                text-shadow: 1.5px 1.5px rgba(82, 82, 82, 1);
+            }
+        }
+
+        @keyframes textcolor_IG{
+            from{
+                color:lightgray;
+            }
+            to{
+                color:rgba(211, 211, 211, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav_container">
+                <img src="images/icon_logo.png" alt="">
+                <ul>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">教學專欄</a></li>
+                    <li><a href="#">範例下載</a></li>
+                </ul>
+            </div>
+            <div class="search_container">
+                <i class="icon">search_icon</i>
+                <input id="search" type="text" name="searchBar">
+            </div>
+        </nav>
+        <img class="float_L" style="margin-top: 2.5%;" src="images/cover.png" alt="">
+        <div class="title_container">
+            <p class="title">
+            初學者如何開始並有效地練習切版(Html, CSS)技巧！
+            </p>
+            <ul class="tags">
+                <li class="tag_beginner">入門</li>
+                <li class="tag_thinking">心法篇</li>
+            </ul>
+        </div>
+    </header>
+    <article>
+        <p class="floatClear summary">“天才與庸才之間的差別不在基因、不在天分，在「刻意練習」！”</p>
+        <section>
+            <h1>切版的刻意練習</h1>
+            練習一定可以提高經驗值，用「對的方式」練習更能夠事半功倍。如果要有效的學習切版，就必須用刻意練習的方法。在此歸納刻意練習的三個重點，設定目標、專注、意見回饋。
+        </section>
+        <section>
+            <h2>① 首先，設定目標是非常重要的，但切勿好高騖遠！</h2>
+            <p>
+                有目標的學習方法，能促使自己持續地增進技能和填補不足，但如果沒有制定目標就很容易會東學一點、西學一點，卻無法有系統性且穩定的成長。
+                然而，我們可以嚮往自己未來成為切版方面的大師，也要明白無法一步登天這個道理。所以一開始不要設定過於遠大的目標，因為無法在短期內達成會帶來失落和挫敗感，反而在過程中因為灰心而無法繼續前進。
+                我常常看到學生剛開始學習切版時，連基本Html標籤跟CSS屬性的用法都不太熟練，就妄想要開始練習一個完整頁面的切版，這樣做是難以成長的！因為一個頁面當中需瞭解的觀念非常多，在沒有基礎的情況下就直接去做，反而會帶來反效果。
+                應該要由小到大漸進性有目標的學習，才能從基礎開始並確實扎根，因此，有智慧且合理的訂下學習計畫吧！
+            </p>
+        </section>
+        <section class="sectionWithImg">
+            <h2>② 專注，指的是一次只專心做好一件事</h2>
+        <img class="float_R" src="images/deliberate_practice.jpg" alt="">
+            <p>
+                很多人並不是缺乏積極、學習的心，但卻因為急於求成，所以只要看到不懂的東西，就瘋狂搜尋資料，，但都無法扎下根基。
+                現代因網路發達，方便隨時隨地使用智慧型手機上網，所以大多數的人都有「一遇到問題就上網google一下」的習慣。但也因為資訊時代，可以獲得資訊的管道和方法太多，一次就得到超出預期的資訊量，讓許多人有了「資訊焦慮症」。
+                我也觀察到有很多學生，在練習範例時，明明是要學習「CSS的權重」觀念，他卻因為看到題目上有範例提到他不太瞭解的內容，就急於去了解它，反而本末倒置，沒有將該學的東西學起來。
+            </p>
+            <p>
+                每次訂下一個小目標，例如，今天想要好好學習flexbox的用法，那就確實、專注地把它搞懂，而不要同時又想看看Grid有什麼差別、又要研究CSS選擇器有哪些，到頭來沒有一件事情搞清楚。
+                所以，在進入切版練習室之前，請大家務必丟掉雜亂的想法，按部就班的把基礎打好，才能扎實的往下一個階段邁進。
+            </p>
+        </section>
+        <section class="floatClear">
+            <h2>③ 想要寫出好的樣式，就要多參考意見回饋</h2>
+            <p>
+                我認為所謂的意見回饋，並非是指別人針對你的程式碼給予評論，因為我們無法期待有人能夠無條件給我們協助。但我們自己可以透過參考別人撰寫的程式碼，來學習更好的作法。
+                例如，可以到codepen上去看看有沒有其他人寫過同樣的內容，他的寫法和思考方式是什麼？跟自己的對比，是否更好？或者有哪些可以參考的，自己沒有嘗試過的方法？
+                在切版這件事上沒有絕對標準的答案，但多參考其他人的寫法也有助於我們切版時的想法更靈活。
+            </p>
+        </section>
+        <section>
+            <p>
+                以上為切版練習的方法，提供想要精進切版實力的人參考。
+                如具備扎實的切版實力，在各式網站開發的過程中，就等於擁有了好的開始，如同把房子建立在磐石上一般。    
+            </p>
+        </section>
+        <hr>
+        <div class="socialMediaLink">
+            <p>歡迎追蹤我們的社群</p>
+            <a href="https://www.instagram.com/htmlcss_room/"><img src="images/icon_IG.png" alt="">@htmlcss_room</a>
+        </div>
+    </article>
+    <footer>
+        <div class="logo_name">
+            <img src="images/logo.png" alt="">
+            <p>切版練習室</p>
+        </div>
+        <div class="subscribe">
+            <p>訂閱我們的電子報</p>
+            <input type="text" placeholder="請輸入您的信箱">
+            <input type="button" value="訂閱">
+        </div>
+    </footer>
+</body>
+</html>
